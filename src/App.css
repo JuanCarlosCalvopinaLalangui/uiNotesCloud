@@ -1,0 +1,113 @@
+body {
+  margin: 20px;
+  background-color: rgba(219, 216, 216, 0.842);
+}
+
+.app-container { /* Update the layout to use grid */
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) { /* Add a media query to change the layout on smaller screens */
+  .app-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+  }
+}
+
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, auto)); /* Update the number of columns depending the size of the window */
+  grid-auto-rows: minmax(250px, auto);
+  gap: 30px;
+}
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.note-item { /* Update the note item styles */
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.note-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.note-header button {
+  font-size: 12px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer; 
+  max-width: fit-content;
+}
+.note-header button:hover {
+  color: #f7f7f7;
+  background-color: #dc3545;
+}
+
+h2,h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+textarea, input {
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.note-form button {
+  padding: 10px;
+  justify-content: space-around;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  inline-size: -webkit-fill-available;
+}
+
+.note-form button:hover {
+  background-color: #0056b3;
+  cursor: pointer;
+}
+
+.edit-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.edit-buttons button {
+  flex: 1;
+}
+
+.edit-buttons button:last-of-type {
+  background-color: #dc3545;
+  color: white;
+}

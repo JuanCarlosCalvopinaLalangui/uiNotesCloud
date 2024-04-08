@@ -13,7 +13,7 @@ const Notes: React.FC<NotesProps> = ({ notes, setSelectedNote, setNotes }) => {
         e.stopPropagation();  // prevent click on note from also clicking parent
 
         try {
-            await fetch(`http://localhost:3030/api/notes/${id}`, {
+            await fetch(`https://notesapicloud-t3ypwqcijq-uc.a.run.app/api/notes/${id}`, {
                 method: 'DELETE',
             });
         } catch (error) {
@@ -30,7 +30,7 @@ const Notes: React.FC<NotesProps> = ({ notes, setSelectedNote, setNotes }) => {
         const fetchNotes = async () => {
             try {
                 // Fetch the data from the API
-            const response = await fetch('http://localhost:3030/api/notes');
+            const response = await fetch('https://notesapicloud-t3ypwqcijq-uc.a.run.app/api/notes');
             const notes: Note[] = await response.json();
             setNotes(notes);
             } catch (error) {

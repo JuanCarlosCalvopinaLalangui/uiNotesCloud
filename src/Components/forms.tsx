@@ -32,7 +32,7 @@ const FormNotes: React.FC<FormNotesProps> = ({
       alert ("Please enter a title and content for the note.");
     }else{
       try {
-        const response = await fetch("http://localhost:3030/api/notes", {
+        const response = await fetch("https://notesapicloud-t3ypwqcijq-uc.a.run.app/api/notes", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -58,7 +58,7 @@ const FormNotes: React.FC<FormNotesProps> = ({
     }
     try {
       const response = await fetch(
-        `http://localhost:3030/api/notes/${selectedNote.id}`,
+        `https://notesapicloud-t3ypwqcijq-uc.a.run.app/api/notes/${selectedNote.id}`,
         {
           method: "PUT",
           headers: {
